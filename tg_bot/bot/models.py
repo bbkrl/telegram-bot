@@ -23,7 +23,7 @@ class Product(models.Model):
 
     product_name = models.CharField(max_length=255, db_index=True)
     brand_name = models.CharField(max_length=255)
-    desctiption = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category_id = models.ManyToManyField('Category', related_name='products')
     img = models.ImageField(null=True, blank=True)
