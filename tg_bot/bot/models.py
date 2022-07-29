@@ -25,7 +25,7 @@ class Product(models.Model):
     brand_name = models.CharField(max_length=255)
     desctiption = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    category_id = models.ManyToManyField('Category', on_delete=models.CASCADE)
+    category_id = models.ManyToManyField('Category', related_name='products')
     img = models.ImageField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
@@ -44,5 +44,5 @@ class Order(models.Model):
 
     qty = models.IntegerField()
     date = models.DateTimeField(auto_now=True)
-    product = models.ManyToManyField(Product, on_delete=models.CASCADE, related_name='orders')
+    product = models.ManyToManyField(Product, related_name='orders')
     user_id = models.IntegerField()
