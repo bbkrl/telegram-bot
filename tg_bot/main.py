@@ -19,7 +19,7 @@ token = config('TOKEN')
 tb: telebot.TeleBot = telebot.TeleBot(token)
 
 
-@tb.message_handler(commands=['start'])
+@tb.message_handler()
 def start_message(message: Message):
     bot = Bot(message.from_user.id, tb)
     bot.process_message(message)
