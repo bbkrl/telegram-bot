@@ -9,6 +9,9 @@ KEYBOARD = {
     'INFO': emojize(':speech_balloon: О магазине'),
     'SETTINGS': emojize('⚙️ Настройки'),
     'SEMIPRODUCT': emojize(':pizza: Полуфабрикаты'),
+    'PIZZA': emojize(':pizza: Пицца'),
+    'BEER': emojize(':beer_mug: Пиво'),
+    'HOOKAH': emojize(':dashing_away: Калик'),
     'GROCERY': emojize(':bread: Бакалея'),
     'ICE_CREAM': emojize(':shaved_ice: Мороженое'),
     '<<': emojize('⏪'),
@@ -27,9 +30,9 @@ KEYBOARD = {
 
 # id категорий продуктов
 CATEGORY = {
-    'SEMIPRODUCT': 1,
-    'GROCERY': 2,
-    'ICE_CREAM': 3,
+    'PIZZA': 2,
+    'BEER': 1,
+    'HOOKAH': 3,
 }
 
 # названия команд

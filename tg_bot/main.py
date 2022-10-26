@@ -1,15 +1,15 @@
 import logging
-# import os
+import os
 #
 from decouple import config
 #
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tg_bot.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tg_bot.settings')
 #
 import telebot
 # from telebot.types import Message
-# import django
+import django
 #
-# django.setup()
+django.setup()
 #
 # from bot.bot import Bot
 from bot.handlers.handler_main import HandlerMain
