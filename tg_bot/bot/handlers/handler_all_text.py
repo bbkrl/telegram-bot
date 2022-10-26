@@ -103,6 +103,19 @@ class HandlerAllText(Handler):
         self.bot.send_message(message.chat.id, "Сделайте свой выбор",
                               reply_markup=self.keybords.category_menu())
 
+    def pressed_btn_product(self, message, product):
+        """
+        Обработка события нажатия на кнопку 'Выбрать товар'. А точнее
+        это выбор товара из категории
+        """
+        self.bot.send_message(message.chat.id, 'Категория ' +
+                              config.KEYBOARD[product],
+                              reply_markup=
+                              self.keybords.set_select_category(
+                                  config.CATEGORY[product]))
+        self.bot.send_message(message.chat.id, "Ок",
+                              reply_markup=self.keybords.category_menu())
+
     def handle(self):
         # обработчик(декоратор) сообщений,
         # который обрабатывает входящие текстовые сообщения от нажатия кнопок.
@@ -121,4 +134,14 @@ class HandlerAllText(Handler):
 
             if message.text == config.KEYBOARD['CHOOSE_GOODS']:
                 self.pressed_btn_category(message)
+
+            # ********** меню (категории товара, ПФ, Бакалея, Мороженое)******
+            if message.text == config.KEYBOARD['HOOKAH']:
+                self.pressed_btn_product(message, 'HOOKAH')
+
+            if message.text == config.KEYBOARD['BEER']:
+                self.pressed_btn_product(message, 'BEER')
+
+            if message.text == config.KEYBOARD['PIZZA']:
+                self.pressed_btn_product(message, 'PIZZA')
 
